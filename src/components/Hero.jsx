@@ -1,13 +1,26 @@
 import { motion } from "framer-motion";
 import profile from "../assets/profile.png";
 
-export default function Hero() {
+export default function Hero({ lenisRef }) {
+
+  const handleScroll = (target) => {
+    const element = document.querySelector(target);
+
+    if (element && lenisRef?.current) {
+      lenisRef.current.scrollTo(element, {
+        offset: -120,
+        duration: 1.2,
+      });
+    }
+  };
+
   return (
     <section
       id="hero"
       className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-darkbg px-6 pt-24"
     >
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+
         {/* LEFT CONTENT */}
         <div>
           <motion.h1
@@ -44,19 +57,19 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="mt-8 flex gap-4"
           >
-            <a
-              href="#projects"
+            <button
+              onClick={() => handleScroll("#projects")}
               className="px-6 py-3 bg-primary text-white rounded-lg shadow-lg hover:scale-105 transition"
             >
               View Projects
-            </a>
+            </button>
 
-            <a
-              href="#contact"
+            <button
+              onClick={() => handleScroll("#contact")}
               className="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition"
             >
               Let's Collaborate
-            </a>
+            </button>
           </motion.div>
         </div>
 
@@ -75,6 +88,7 @@ export default function Hero() {
             className="relative w-72 h-72 object-cover rounded-full shadow-2xl border-4 border-white dark:border-white/10"
           />
         </motion.div>
+
       </div>
     </section>
   );
