@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <Navbar lenisRef={lenisRef} />
-      <Hero />
+      <Hero lenisRef={lenisRef} />
       <Engineering />
       <Stats />
       <Skills />
