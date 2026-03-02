@@ -60,7 +60,7 @@ export default function Navbar({ lenisRef }) {
 
             {/* Resume */}
             <a
-              href="/Madan_Garimella_Software_Developer_Resume.pdf"
+              href="/Madan_Resume.pdf"
               download
               className="px-5 py-2 bg-primary text-white rounded-full text-sm hover:scale-105 transition"
             >

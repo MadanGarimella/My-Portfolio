@@ -25,7 +25,7 @@ export default function Contact() {
 
           <div className="pt-6">
             <a
-              href="/Madan_Garimella_Software_Developer_Resume.pdf"
+              href="/Madan_Resume.pdf"
               download
               className="inline-block px-6 py-3 border border-primary text-primary rounded-xl hover:bg-primary hover:text-white transition duration-300"
             >
