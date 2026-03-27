@@ -39,11 +39,11 @@ function App() {
     <>
       <Navbar lenisRef={lenisRef} />
       <Hero lenisRef={lenisRef} />
-      <Engineering />
+      {/* <Engineering />  */}
       <Stats />
       <Skills />
-      <Projects />
       <Services />
+      <Projects />
       <Contact />
     </>
   );

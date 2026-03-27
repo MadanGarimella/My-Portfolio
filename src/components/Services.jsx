@@ -1,43 +1,70 @@
 import SectionWrapper from "./SectionWrapper";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
-const services = [
+const devServices = [
   {
-    title: "Web Engineering",
-    description:
-      "High-performance, scalable web applications engineered with modern frontend architecture and optimized backend systems.",
+    title: "Frontend Systems",
     points: [
-      "React & Modern UI Systems",
-      "API & Backend Development",
+      "React & Modern UI",
+      "Responsive Design",
       "Performance Optimization",
-      "Deployment & DevOps Setup",
+      "Animations & Interactions",
     ],
   },
   {
-    title: "Growth-Driven Digital Marketing",
-    description:
-      "Marketing systems designed to convert traffic into measurable business outcomes through data-backed strategies.",
+    title: "Backend & APIs",
+    points: [
+      "Node.js / Express",
+      "REST API Development",
+      "Database Design",
+      "Authentication Systems",
+    ],
+  },
+  {
+    title: "Deployment & Scaling",
+    points: [
+      "Vercel / AWS Deployments",
+      "CI/CD Setup",
+      "Speed Optimization",
+      "Maintenance & Scaling",
+    ],
+  },
+];
+
+const marketingServices = [
+  {
+    title: "Content & Branding",
+    points: [
+      "Content Strategy",
+      "Instagram Growth",
+      "Brand Positioning",
+      "Short-form Video Strategy",
+    ],
+  },
+  {
+    title: "Performance Marketing",
     points: [
       "Conversion Funnels",
-      "Content Strategy",
-      "SEO Optimization",
-      "Analytics & Tracking Setup",
+      "Landing Pages",
+      "Ad Strategy",
+      "Lead Generation Systems",
     ],
   },
   {
-    title: "Conversion & Optimization Systems",
-    description:
-      "User experiences engineered for clarity, persuasion, and revenue growth — not just aesthetics.",
+    title: "Analytics & Optimization",
     points: [
-      "UX & Interface Optimization",
-      "Landing Page Systems",
-      "A/B Strategy Planning",
-      "Brand Positioning Alignment",
+      "SEO Optimization",
+      "Tracking Setup",
+      "A/B Testing",
+      "Conversion Optimization",
     ],
   },
 ];
 
 export default function Services() {
+  const [activeTab, setActiveTab] = useState("dev");
+
   const handleScroll = (target) => {
     const element = document.querySelector(target);
     if (element && window.lenis) {
@@ -48,65 +75,107 @@ export default function Services() {
     }
   };
 
+  const currentServices =
+    activeTab === "dev" ? devServices : marketingServices;
+
   return (
     <SectionWrapper
       id="services"
-      className="py-32 bg-white dark:bg-darkbg px-6"
+      className="py-28 bg-[#0B0F1A] px-6 -mt-14"
     >
-      <div className="max-w-6xl mx-auto text-center space-y-16">
+      <div className="max-w-6xl  space-y-16">
 
-        <div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-            Services
+        {/* HEADER */}
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            What I Do
           </h2>
-          <p className="mt-6 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            End-to-end digital systems combining engineering precision with growth-focused execution.
+          <p className="mt-6 text-gray-400">
+            I build scalable tech systems and growth engines that drive real business results.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        {/* TOGGLE BUTTONS */}
+        <div className="flex justify-center">
+          <div className="flex bg-white/5 border border-white/10 rounded-full p-1">
 
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ y: -12 }}
-              transition={{ duration: 0.4 }}
-              className="group relative p-10 rounded-3xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 shadow-lg hover:shadow-2xl transition duration-500"
+            <button
+              onClick={() => setActiveTab("dev")}
+              className={`px-6 py-2 rounded-full text-md transition ${
+                activeTab === "dev"
+                  ? "bg-primary text-white"
+                  : "text-gray-400 hover:text-white"
+              }`}
             >
-              <div className="relative z-10">
-                <h3 className="text-2xl font-semibold text-primary">
-                  {service.title}
-                </h3>
+              Software Development
+            </button>
 
-                <p className="mt-6 text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {service.description}
-                </p>
+            <button
+              onClick={() => setActiveTab("marketing")}
+              className={`px-6 py-2 rounded-full text-md transition ${
+                activeTab === "marketing"
+                  ? "bg-primary text-white"
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
+              Digital Marketing
+            </button>
 
-                <ul className="mt-8 space-y-3 text-left">
-                  {service.points.map((point, i) => (
-                    <li
-                      key={i}
-                      className="text-sm text-gray-700 dark:text-gray-300 flex items-start gap-2"
-                    >
-                      <span className="text-primary">•</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          </div>
+        </div>
+
+        {/* SERVICES GRID WITH ANIMATION */}
+        <div className="relative min-h-[320px]">
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.4 }}
+              className="grid md:grid-cols-3 gap-8"
+            >
+
+              {currentServices.map((service, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition"
+                >
+                  <h4 className="text-lg font-semibold text-primary">
+                    {service.title}
+                  </h4>
+
+                  <ul className="mt-6 space-y-3">
+                    {service.points.map((point, i) => (
+                      <li
+                        key={i}
+                        className="text-sm text-gray-300 flex items-start gap-2"
+                      >
+                        <span className="text-primary">•</span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+
             </motion.div>
-          ))}
+          </AnimatePresence>
 
         </div>
 
-        <div className="pt-10">
+        {/* CTA */}
+        {/* <div className="text-center pt-6">
           <button
             onClick={() => handleScroll("#contact")}
-            className="inline-block px-8 py-4 bg-primary text-white rounded-xl shadow-xl hover:scale-105 transition duration-300"
+            className="px-8 py-3 bg-primary text-white rounded-full shadow-lg hover:scale-105 transition"
           >
             Let’s Build Something Impactful
           </button>
-        </div>
+        </div> */}
 
       </div>
     </SectionWrapper>

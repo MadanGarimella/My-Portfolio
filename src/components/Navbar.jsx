@@ -8,8 +8,8 @@ export default function Navbar({ lenisRef }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Projects", href: "#projects" },
     { name: "Services", href: "#services" },
+    { name: "Clients", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -35,12 +35,12 @@ export default function Navbar({ lenisRef }) {
         transition={{ duration: 0.6 }}
         className="fixed top-6 w-full z-50 flex justify-center px-6"
       >
-        <div className="w-full max-w-6xl px-8 py-4 rounded-full border border-gray-300 dark:border-white/10 bg-white dark:bg-darkbg shadow-lg flex justify-between items-center transition-colors duration-500">
+        <div className="w-full max-w-6xl px-8 py-4 rounded-full font-serif font-semibold border border-gray-300 dark:border-white/10 bg-white dark:bg-darkbg shadow-lg flex justify-between items-center transition-colors duration-500">
 
           {/* Name (Scroll to Hero) */}
           <button
             onClick={() => handleScroll("#hero")}
-            className="text-lg font-semibold text-gray-900 dark:text-white hover:text-primary transition"
+            className="text-lg font-bold font-serif text-gray-900 dark:text-white hover:text-primary transition"
           >
             Madan Garimella
           </button>
@@ -68,7 +68,7 @@ export default function Navbar({ lenisRef }) {
             </a>
 
             {/* Premium Toggle */}
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="relative w-16 h-8 rounded-full p-1 transition-colors duration-500 bg-gray-300 dark:bg-gray-700"
             >
@@ -87,7 +87,7 @@ export default function Navbar({ lenisRef }) {
                   <Sun size={14} className="text-blue-600" />
                 )}
               </motion.div>
-            </button>
+            </button> */}
 
           </div>
 
