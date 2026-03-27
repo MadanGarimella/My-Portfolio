@@ -15,36 +15,51 @@ const projects = {
       title: "Intuiti Corporates — Digital Marketing Agency Website",
       type: "Website Development",
       image: inco,
+
       overview:
-        "Designed and developed a high-conversion website for Intuiti Corporates, a digital marketing agency focused on helping brands scale through performance-driven strategies.",
+        "Designed and developed a high-conversion website for Intuiti Corporates, a digital marketing agency focused on scaling brands through performance strategies.",
+
       description:
-        "Built a modern, visually compelling website that communicates authority, trust, and results. The primary goal was to convert visitors into qualified leads through strategic UI/UX and persuasive content structure.",
+        "Built a modern, visually compelling website that communicates authority, trust, and results. The goal was to convert visitors into qualified leads through strategic UI/UX and persuasive content structure.",
+
       highlights: [
-        "Conversion-focused sections",
-        "Smooth animations",
-        "Premium UI",
-        "Responsive design",
+        "Conversion-focused landing sections (Hero, Services, Case Studies, CTA)",
+        "Smooth animations using Framer Motion",
+        "Clean, premium UI aligned with marketing standards",
+        "Fully responsive across all devices",
+        "Optimized user journey toward inquiries",
       ],
+
       stack: ["React.js", "Tailwind CSS", "Framer Motion"],
+
       outcome: [
-        "Improved engagement",
-        "Strong brand positioning",
-        "Better lead generation",
+        "Improved user engagement through interactive design",
+        "Strong brand positioning as a premium agency",
+        "Structured for maximum lead generation",
       ],
     },
+
     {
       title: "Forte & Co Legal Solutions — Professional Web Platform",
       type: "Web Platform",
       image: forte,
-      overview: "Developed a professional website for a legal firm.",
-      description: "Created a clean corporate website enhancing credibility.",
+
+      overview:
+        "Developed a professional website for a legal firm focused on trust, clarity, and structured services.",
+
+      description:
+        "Created a clean, corporate website that enhances credibility while clearly presenting legal services.",
+
       highlights: [
         "Clear service categorization",
-        "Trust-focused UI",
-        "Professional structure",
+        "Trust-focused UI design",
+        "Professional layout structure",
+        "SEO-ready architecture",
       ],
-      stack: ["React.js", "SEO"],
-      outcome: ["Improved credibility"],
+
+      stack: ["React.js", "UI Architecture", "SEO"],
+
+      outcome: ["Improved digital credibility", "Better service clarity"],
     },
   ],
 
@@ -53,41 +68,86 @@ const projects = {
       title: "Epicure Cafe — Brand Growth Strategy",
       type: "Digital Marketing",
       image: explore,
-      overview: "Content-driven growth strategy.",
-      description: "Focused on engagement & storytelling.",
-      highlights: ["Content strategy", "Reels", "Engagement"],
-      stack: ["Content", "Social Media"],
-      outcome: ["Increased engagement"],
+
+      overview:
+        "Built a content-driven strategy to increase engagement and brand visibility.",
+
+      description:
+        "Focused on storytelling, visuals, and audience engagement to grow the cafe’s digital presence.",
+
+      highlights: [
+        "Content calendar planning",
+        "Reels & short-form strategy",
+        "Audience engagement focus",
+      ],
+
+      stack: ["Content Marketing", "Social Media", "Branding"],
+
+      outcome: ["Increased engagement", "Improved local visibility"],
     },
+
     {
-      title: "Epicure Cafe — Brand Growth Strategy",
-      type: "Digital Marketing",
+      title: "Haraa Gold — Luxury Branding",
+      type: "Brand Marketing",
       image: haraa,
-      overview: "Content-driven growth strategy.",
-      description: "Focused on engagement & storytelling.",
-      highlights: ["Content strategy", "Reels", "Engagement"],
-      stack: ["Content", "Social Media"],
-      outcome: ["Increased engagement"],
+
+      overview:
+        "Developed a luxury brand presence through digital storytelling.",
+
+      description:
+        "Focused on premium visuals and content strategy to elevate brand perception.",
+
+      highlights: [
+        "Luxury-focused content strategy",
+        "Visual storytelling",
+        "Brand consistency",
+      ],
+
+      stack: ["Branding", "Content", "Performance Marketing"],
+
+      outcome: ["Elevated brand perception", "Stronger audience reach"],
     },
+
     {
-      title: "Epicure Cafe — Brand Growth Strategy",
-      type: "Digital Marketing",
+      title: "Smaakanzzo — Local Growth Campaign",
+      type: "Marketing Campaign",
       image: smaakanzzo,
-      overview: "Content-driven growth strategy.",
-      description: "Focused on engagement & storytelling.",
-      highlights: ["Content strategy", "Reels", "Engagement"],
-      stack: ["Content", "Social Media"],
-      outcome: ["Increased engagement"],
+
+      overview: "Executed campaigns to boost local engagement.",
+
+      description:
+        "Focused on creative campaigns and audience targeting for local reach.",
+
+      highlights: [
+        "Local campaign execution",
+        "Creative promotions",
+        "Audience targeting",
+      ],
+
+      stack: ["Campaigns", "Content"],
+
+      outcome: ["Boosted local awareness"],
     },
+
     {
-      title: "Epicure Cafe — Brand Growth Strategy",
-      type: "Digital Marketing",
+      title: "CoZone — Creative Brand Positioning",
+      type: "Brand Strategy",
       image: cozone,
-      overview: "Content-driven growth strategy.",
-      description: "Focused on engagement & storytelling.",
-      highlights: ["Content strategy", "Reels", "Engagement"],
-      stack: ["Content", "Social Media"],
-      outcome: ["Increased engagement"],
+
+      overview: "Positioned a creative studio with strong digital identity.",
+
+      description:
+        "Focused on brand storytelling and community-driven engagement.",
+
+      highlights: [
+        "Brand positioning",
+        "Creative storytelling",
+        "Community engagement",
+      ],
+
+      stack: ["Branding", "Strategy"],
+
+      outcome: ["Improved brand positioning"],
     },
   ],
 };
@@ -101,7 +161,9 @@ export default function Projects() {
   return (
     <SectionWrapper id="projects" className="bg-[#0B0F1A] px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-semibold text-white mb-10">Successful Clients</h2>
+        <h2 className="text-4xl font-semibold text-white mb-10">
+          Successful Clients
+        </h2>
 
         {/* TOGGLE */}
         <div className="flex justify-center mb-16">
